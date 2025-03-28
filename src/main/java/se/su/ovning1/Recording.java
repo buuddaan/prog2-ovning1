@@ -1,33 +1,40 @@
 package se.su.ovning1;
+//LÄGG 0.25
+public abstract class Recording extends Item implements PriceableWithVAT25 {
+    private static final int TO_DECIMAL = 10;
+    private final String artist;
+    private final int year;
+    private int condition;
+    private final double price;
 
-public abstract class Recording implements PriceableWithVAT25 {
-    private String artist;
-    private int year;
-    private String condition;
-    private double price;
-
-    public Recording(String name, String artist, int year, int condition,double price){
+    protected Recording(String name, String artist, int year, int condition,double price){
+        super(name);
+        this.artist = artist;
+        this.year = year;
+        this.condition = condition;
+        this.price = price;
     }
-
 
     public String getArtist() {
         return artist;
     }
 
-    public getType() //ABSTRAKT
+    public abstract String getType();
 
-    public int getCondition(){ }
-    public getPrice(){ return price;}
-    //attributet condition) som är ett värde
-    //mellan 0 och 10, där 10 är perfekt skick och 0 representerar något osäljbart.
-    //Värdet minskar med 10 procentenheter för varje steg, så något med startpriset
-    //100 och slitaget 8 har vördet 80. Inga skivor kan dock f˚a ett värde under 10
-    //kronor f¨
-    //ore moms.
+    public int getCondition(){
+        return condition;
+    }
+
+    public double getPrice(){
+        return ((double) getCondition()/TO_DECIMAL) * price;
+
+    }
+
 
     @Override //??
     public String toString() {
-        return super.toString(); }
+        return String.format("Name = %s, Artist = '%s', Year = %d, Condition %d, Price = %.2f", super.getName(), getArtist(), getYear(), getCondition(), getPrice());
+    }
 
     public int getYear() {
         return year;}

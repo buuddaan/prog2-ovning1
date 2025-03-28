@@ -3,7 +3,14 @@ package se.su.ovning1;
 public interface Priceable {
 
     double getPrice();
-    double getVAT();
+
+    default double getVAT() {
+        return 0.0;
+    }
+
+    default double getPriceWithVAT() {
+        return 0.0;
+    }
 
  //OBS FRÅGETECKEN KRING DENNA
 
