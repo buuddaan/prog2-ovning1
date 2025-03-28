@@ -1,15 +1,13 @@
-package se.su.ovning1;
-
+//eljo2851, mawa6612, mafa2209
 import java.util.*;
 
 public class Order{ //hur lösa detta utan arv?
     //Ingår inte i arvshierarki?
 
     private final long orderNumber;
-    private static long counter; //Texten i klasschemat är snedskrivet
+    private static long counter; 
     private final List<Item> items;
 
-    //Konstruktor ska acceptera olika antal Item-object
     public Order(Item... items){
         this.items = new ArrayList<>();
         this.orderNumber = counter++;
@@ -42,13 +40,9 @@ public class Order{ //hur lösa detta utan arv?
         String receipt = "Receipt for order #" + orderNumber+ "\n-----------\n";
 
         for(Item item : items){
-            if(item instanceof Book){
-                receipt += ((Book) item).getType() + ": " + item + "\n";
+            receipt += item + "\n";
             }
-            else if (item instanceof Recording){
-                receipt += ((Recording) item).getType() + ": " + item +"\n";
-            }
-        }
+        
         return receipt + "\nTotal excl. VAT: " + getTotalValue() + "\nTotal incl. VAT: " + getTotalValuePlusVAT();
     }
 

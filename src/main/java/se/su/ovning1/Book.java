@@ -1,5 +1,4 @@
-package se.su.ovning1;
-
+//eljo2851, mawa6612, mafa2209
 public class Book extends Item implements PriceableWithVAT6 {
     private static final double COST_OF_BOUND = 1.3;
     private final String author;
@@ -14,25 +13,25 @@ public class Book extends Item implements PriceableWithVAT6 {
 
     }
 
-    public String getType() {
+    protected String getType() {
         return "Book";
     }
     @Override
     public String toString(){
-        return String.format("Name = '%s', Author = '%s', Price = %.2f", super.getName(), author, price); //Kontrollera denna
+        return String.format("%s: name='%s', author='%s', bound=%b, price=%.1f, price+VAT=%.1f", getType(), super.getName(), author, bound, getPrice(), getPriceWithVAT()); //Kontrollera denna
     }
 
-    public String getAuthor() {
+    protected String getAuthor() {
         return author;
     }
-    public boolean bound() {
+    protected boolean bound() {
         return bound;
     }
 
     @Override
     public double getPrice() {
         //Ska räkna ut priset på en bok
-        if (bound()) {return price + COST_OF_BOUND;} //Plockar bort VAT6 uträkning här, kan räknas i Order???
+        if (bound()) {return price * COST_OF_BOUND;}
         return price;
         }
 

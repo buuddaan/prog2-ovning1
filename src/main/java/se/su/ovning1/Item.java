@@ -1,5 +1,4 @@
-package se.su.ovning1;
-
+//eljo2851, mawa6612, mafa2209
 
 public abstract class Item implements Priceable {
     //Abstract är det som gör att klassen inte kan instanseras
@@ -17,4 +16,4 @@ public abstract class Item implements Priceable {
 
 
 
-
+}

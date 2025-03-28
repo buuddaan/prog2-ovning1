@@ -1,4 +1,3 @@
-package se.su.ovning1;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +14,7 @@ public class Main {
 
         Order order1 = new Order(book1, book2bound);
 
-        System.out.println(order1.getReceipt());
+        //System.out.println(order1.getReceipt());
 
 		/*
         Receipt for order #1
@@ -28,7 +27,7 @@ public class Main {
 		*/
 
         Order jazz = new Order(book2, item1, cd2);
-        System.out.println(jazz.getReceipt());
+        //System.out.println(jazz.getReceipt());
 
 		/*
         Receipt for order #2
@@ -42,7 +41,7 @@ public class Main {
 		*/
 
         Order modernIndie = new Order(lp1, lp2, lp3);
-        System.out.println(modernIndie.getReceipt());
+        //System.out.println(modernIndie.getReceipt());
 
 		/*
         Receipt for order #3

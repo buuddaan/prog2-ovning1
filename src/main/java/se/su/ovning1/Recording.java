@@ -1,13 +1,13 @@
-package se.su.ovning1;
-//LÄGG 0.25
+//eljo2851, mawa6612, mafa2209
+
 public abstract class Recording extends Item implements PriceableWithVAT25 {
-    private static final int TO_DECIMAL = 10;
+    // private static final int TO_DECIMAL = 10; Borttagen på grund av "fel antal medlemsvariabler i testfall", får ha magic number istället
     private final String artist;
     private final int year;
     private int condition;
     private final double price;
 
-    protected Recording(String name, String artist, int year, int condition,double price){
+    protected Recording(String name, String artist, int year, int condition, double price){
         super(name);
         this.artist = artist;
         this.year = year;
@@ -26,14 +26,15 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
     }
 
     public double getPrice(){
-        return ((double) getCondition()/TO_DECIMAL) * price;
-
+        double price = 0;
+        price = ((double) getCondition()/10) * getOriginalPrice();
+        return price >= 10 ? price : 10;
     }
 
 
-    @Override //??
+    @Override 
     public String toString() {
-        return String.format("Name = %s, Artist = '%s', Year = %d, Condition %d, Price = %.2f", super.getName(), getArtist(), getYear(), getCondition(), getPrice());
+        return String.format("%s: name='%s', artist='%s', year=%d, condition=%d, original price=%.1f, price=%.1f, price+VAT=%.1f", getType(), super.getName(), getArtist(), getYear(), getCondition(), getOriginalPrice(), getPrice(), getPriceWithVAT());
     }
 
     public int getYear() {

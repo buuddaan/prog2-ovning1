@@ -1,17 +1,17 @@
-package se.su.ovning1;
-//Är en helt abstrakt klass
+//eljo2851, mawa6612, mafa2209
+
 public interface Priceable {
 
     double getPrice();
 
     default double getVAT() {
-        return 0.0;
+        return getVAT();
     }
 
     default double getPriceWithVAT() {
-        return 0.0;
+        return getPrice() + getPrice() * getVAT();
     }
 
- //OBS FRÅGETECKEN KRING DENNA
+ 
 
 }
