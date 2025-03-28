@@ -1,4 +1,4 @@
-//eljo2851, mawa6612, mafa2209
+package se.su.ovning1;//eljo2851, mawa6612, mafa2209
 public interface PriceableWithVAT6 extends Priceable {
     static final double VAT6 = 0.06;
 

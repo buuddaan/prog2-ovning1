@@ -1,4 +1,5 @@
 //eljo2851, mawa6612, mafa2209
+package se.su.ovning1;
 public class Book extends Item implements PriceableWithVAT6 {
     private static final double COST_OF_BOUND = 1.3;
     private final String author;

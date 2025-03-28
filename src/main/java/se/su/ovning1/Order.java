@@ -1,4 +1,4 @@
-//eljo2851, mawa6612, mafa2209
+package se.su.ovning1;//eljo2851, mawa6612, mafa2209
 import java.util.*;
 
 public class Order{ //hur lösa detta utan arv?

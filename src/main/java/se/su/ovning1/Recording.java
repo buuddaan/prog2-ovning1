@@ -1,4 +1,4 @@
-//eljo2851, mawa6612, mafa2209
+package se.su.ovning1;//eljo2851, mawa6612, mafa2209
 
 public abstract class Recording extends Item implements PriceableWithVAT25 {
     // private static final int TO_DECIMAL = 10; Borttagen på grund av "fel antal medlemsvariabler i testfall", får ha magic number istället

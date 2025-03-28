@@ -1,4 +1,4 @@
-//eljo2851, mawa6612, mafa2209
+package se.su.ovning1;//eljo2851, mawa6612, mafa2209
 public class CompactDisc extends Recording {
 
     public CompactDisc(String name, String artist, int year, int condition, double price) {
