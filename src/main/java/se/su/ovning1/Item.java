@@ -1,5 +1,6 @@
 package se.su.ovning1;
 
+
 public abstract class Item implements Priceable {
     //Abstract är det som gör att klassen inte kan instanseras
     private final String name;
@@ -16,4 +17,4 @@ public abstract class Item implements Priceable {
 
 
 
-}
+
